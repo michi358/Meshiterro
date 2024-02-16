@@ -9,17 +9,19 @@ class PostImagesController < ApplicationController
     @post_image.save
     redirect_to post_images_path
   end
-  
+
+  # 一覧画面
   def index
+    @post_image = PostImage.all
   end
 
   def show
   end
-  
+
   private
-  
+
   def post_image_params
     params.require(:post_image).permit(:shop_name, :image, :caption)
-    
+
   end
 end
