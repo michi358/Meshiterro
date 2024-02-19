@@ -6,7 +6,7 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params)
     @post_image.user_id = current_user.id
-    @post_image.save
+    @post_image.save!
     redirect_to post_images_path
   end
 
@@ -16,10 +16,10 @@ class PostImagesController < ApplicationController
   end
 
   # 詳細画面
-  def show 
+  def show
     @post_image = PostImage.find(params[:id])
   end
-  
+
   # 削除機能
   def destroy
     post_image = PostImage.find(params[:id])
