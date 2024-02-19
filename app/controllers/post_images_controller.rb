@@ -18,6 +18,7 @@ class PostImagesController < ApplicationController
   # 詳細画面
   def show
     @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   # 削除機能
