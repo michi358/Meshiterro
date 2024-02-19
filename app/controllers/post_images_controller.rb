@@ -12,7 +12,7 @@ class PostImagesController < ApplicationController
 
   # 一覧画面
   def index
-    @post_image = PostImage.all
+    @post_images = PostImage.all
   end
 
   # 詳細画面
